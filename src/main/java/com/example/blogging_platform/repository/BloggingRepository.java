@@ -1,6 +1,8 @@
 package com.example.blogging_platform.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import com.example.blogging_platform.model.Blogging;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BloggingRepository extends CrudRepository<BloggingRepository, Integer> {
+
+public interface BloggingRepository extends JpaRepository<Blogging, Integer> {
 }
