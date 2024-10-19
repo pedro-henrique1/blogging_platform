@@ -66,5 +66,14 @@ public class BloggingController {
         return ResponseEntity.ok().body(blogging);
     }
 
-
+    @GetMapping(params = "term")
+    public ResponseEntity<List<Blogging>> searchPost(@RequestParam(value = "term") String term){
+      List<Blogging> posts;
+      if (term != null && !term.trim().isEmpty()) {
+          posts = this.bloggingRepository.searchByTerm(term);
+      }else {
+          return ResponseEntity.noContent().build();
+      }
+      return ResponseEntity.status(HttpStatus.OK).body(posts);
+    }
 }
