@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -35,18 +36,18 @@ public class Blogging {
     @Column(name = "tags", nullable = false)
     private String tags;
 
-    @Column(name = "createdAt", nullable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "created_at", nullable = false)
+    private Timestamp created_at;
 
-    @Column(name = "updatedAt", nullable = false)
-    private LocalDateTime updatedAt;
+    @Column(name = "updated_at", nullable = false)
+    private Timestamp updated_at;
 
     public Blogging(BloggingRequestPayload bloggingRequestPayload) {
         this.title = bloggingRequestPayload.title();
         this.content = bloggingRequestPayload.content();
         this.category = bloggingRequestPayload.category();
         this.tags = bloggingRequestPayload.tags().toString();
-        this.createdAt = LocalDateTime.parse(bloggingRequestPayload.createdAt(), DateTimeFormatter.ISO_DATE_TIME);
-        this.updatedAt = LocalDateTime.parse(bloggingRequestPayload.updatedAt(), DateTimeFormatter.ISO_DATE_TIME);
+        this.created_at = Timestamp.valueOf(LocalDateTime.now());
+        this.updated_at = Timestamp.valueOf(LocalDateTime.now());;
     }
 }

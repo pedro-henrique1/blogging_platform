@@ -5,7 +5,7 @@ CREATE TABLE blogging
     content   VARCHAR(255),
     category  VARCHAR(255),
     tags      VARCHAR(255),
-    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updatedAt TIMESTAMP DEFAULT  CURRENT_TIMESTAMP
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
 
 )

@@ -9,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +45,7 @@ public class BloggingController {
         postBlog.setContent(bloggingRequestPayload.content());
         postBlog.setCategory(bloggingRequestPayload.category());
         postBlog.setTags(String.valueOf(bloggingRequestPayload.tags()));
-        postBlog.setUpdatedAt(LocalDateTime.now());
+        postBlog.setUpdated_at(Timestamp.valueOf(LocalDateTime.parse(bloggingRequestPayload.updated_at(), DateTimeFormatter.ISO_DATE_TIME)));
 
         this.bloggingRepository.save(postBlog);
 
