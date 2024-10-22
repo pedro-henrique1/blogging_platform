@@ -1,11 +1,11 @@
 CREATE TABLE blogging
 (
-    id PRIMARY KEY AUTO_INCREMENT,
+    id        INTEGER AUTO_INCREMENT PRIMARY KEY,
     title     VARCHAR(255),
     content   VARCHAR(255),
     category  VARCHAR(255),
     tags      VARCHAR(255),
-    createdAt DATETIME,
-    updatedAt DATETIME
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedAt TIMESTAMP DEFAULT  CURRENT_TIMESTAMP
 
 )
