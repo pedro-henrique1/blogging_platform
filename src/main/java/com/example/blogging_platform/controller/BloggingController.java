@@ -35,7 +35,7 @@ public class BloggingController {
         Optional<Blogging> optionalPostBlog = this.bloggingRepository.findById(id);
 
         if (optionalPostBlog.isEmpty()) {
-            return ResponseEntity.notFound().build(); // Retorna 404 se o blog não for encontrado
+            return ResponseEntity.notFound().build();
         }
 
         Blogging postBlog = optionalPostBlog.get();
@@ -53,6 +53,9 @@ public class BloggingController {
     @GetMapping
     public ResponseEntity<?> GetAllBlogging() {
         List<Blogging> bloggings = this.bloggingRepository.findAll();
+            if (bloggings.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+            }
         return ResponseEntity.status(HttpStatus.OK).body(bloggings);
     }
 

@@ -10,12 +10,9 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 @Entity
-@Table(name = "Blogging")
+@Table(name = "blogging")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -49,7 +46,7 @@ public class Blogging {
         this.content = bloggingRequestPayload.content();
         this.category = bloggingRequestPayload.category();
         this.tags = bloggingRequestPayload.tags().toString();
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.parse(bloggingRequestPayload.createdAt(), DateTimeFormatter.ISO_DATE_TIME);
+        this.updatedAt = LocalDateTime.parse(bloggingRequestPayload.updatedAt(), DateTimeFormatter.ISO_DATE_TIME);
     }
 }
