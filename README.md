@@ -53,7 +53,7 @@ clara entre o cliente e o servidor por meio de métodos HTTP intuitivos e consis
 
 - Para criação de um post
 
- ``` http
+ ```http 
 POST /posts
 {
   "title": "My First Blog Post",
@@ -66,7 +66,7 @@ POST /posts
 
 - Para atualização de um post
 
- ``` http
+ ```http
 PUT /posts/1
 {
   "title": "My Updated Blog Post",
@@ -82,13 +82,13 @@ PUT /posts/1
 
 - Para deletar um post
 
-``` http
+```http
     DELETE /posts/1
 ```
 
 - Obter Todos os Posts do Blog
 
- ``` http  
+ ```http  
 GET /posts
 [
   {
@@ -121,7 +121,7 @@ GET /posts
 
 - Filtrar postagens por termo de pesquisa
 
-``` http
+```http
   GET /posts?term=tech
 ```
 
