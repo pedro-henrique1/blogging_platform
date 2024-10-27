@@ -29,14 +29,14 @@ clara entre o cliente e o servidor por meio de métodos HTTP intuitivos e consis
 
 - Clone o repositório
 
-```git
+``` bash
   git clone https://github.com/pedro-henrique1/blogging_platform
   cd blogging_platform
 ```
 
 - Configure as variáveis para a conexão do banco
 
-```
+``` bash
   cd src/main/resources
   
   cp example.application.properties  application.properties
@@ -44,7 +44,7 @@ clara entre o cliente e o servidor por meio de métodos HTTP intuitivos e consis
 
 - Construção e execução com Docker:
 
-```
+``` bash
   docker build -t java .
   docker compose up --build
 ```
@@ -66,7 +66,7 @@ POST /posts
 
 - Para atualização de um post
 
- ``` 
+ ``` http
 PUT /posts/1
 {
   "title": "My Updated Blog Post",
@@ -78,17 +78,17 @@ PUT /posts/1
   ]
 }
 
-```
+``` 
 
 - Para deletar um post
 
-``` 
+``` http
     DELETE /posts/1
 ```
 
 - Obter Todos os Posts do Blog
 
- ```  
+ ``` http  
 GET /posts
 [
   {
@@ -121,7 +121,7 @@ GET /posts
 
 - Filtrar postagens por termo de pesquisa
 
-``` 
+``` http
   GET /posts?term=tech
 ```
 
