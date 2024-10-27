@@ -90,7 +90,7 @@ PUT /posts/1
 
 - Obter Todos os Posts do Blog
 
- ```json lines
+ ``` json 
 GET /posts
 [
   {
@@ -123,7 +123,7 @@ GET /posts
 
 - Para filtra post por termo
 
-``` http request
+``` 
   GET /posts?term=tech
 ```
 
