@@ -55,7 +55,7 @@ clara entre o cliente e o servidor por meio de métodos HTTP intuitivos e consis
 
 - Para criação de um post
 
- ``` json lines
+ ``` 
 POST /posts
 {
   "title": "My First Blog Post",
@@ -68,7 +68,7 @@ POST /posts
 
 - Para atualização de um post
 
- ``` json lines
+ ``` 
 PUT /posts/1
 {
   "title": "My Updated Blog Post",
@@ -84,13 +84,13 @@ PUT /posts/1
 
 - Para deletar um post
 
-``` http request
+``` 
     DELETE /posts/1
 ```
 
 - Obter Todos os Posts do Blog
 
- ``` json 
+ ```  
 GET /posts
 [
   {
