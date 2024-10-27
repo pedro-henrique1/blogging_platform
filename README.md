@@ -1,6 +1,5 @@
 # Blogging Platform API
 
-Aqui está o texto ampliado:
 
 Uma API RESTful robusta com operações CRUD completas voltada para uma plataforma de blog pessoal. Esta API permite que
 os usuários realizem operações fundamentais: Criar, Ler, Atualizar e Excluir postagens de blog, oferecendo um conjunto
